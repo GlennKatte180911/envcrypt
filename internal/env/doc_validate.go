@@ -13,6 +13,9 @@
 //	- RequirePrefix    – rejects entries whose key lacks a given prefix.
 //	- ForbidPrefix     – rejects entries whose key carries a forbidden prefix.
 //
+// Multiple rules can be composed with ValidateAll, which runs every rule
+// against each entry and collects all violations into a single error.
+//
 // # Schema
 //
 // The schema.go file provides a lightweight schema mechanism.  A Schema is a
