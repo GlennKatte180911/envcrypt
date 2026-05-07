@@ -40,6 +40,13 @@ envcrypt keygen
 
 Share the encrypted `.env.enc` file safely in version control and distribute the key to teammates via a secrets manager or secure channel.
 
+> **Tip:** You can also provide the key via the `ENVCRYPT_KEY` environment variable instead of the `--key` flag to avoid exposing it in shell history:
+>
+> ```bash
+> export ENVCRYPT_KEY=mysecretkey
+> envcrypt encrypt --in .env --out .env.enc
+> ```
+
 ---
 
 ## How It Works
