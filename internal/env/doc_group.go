@@ -26,4 +26,13 @@
 // # Flattening back to a slice
 //
 //	all := env.Flatten(groups)
+//
+// # Filtering a group by name
+//
+//	// GroupKeys returns the sorted list of bucket names present in a grouped map,
+//	// which is useful for iterating over groups in a deterministic order.
+//	names := env.GroupKeys(groups) // ["DB", "APP", "INTERNAL", …]
+//	for _, name := range names {
+//		process(name, groups[name])
+//	}
 package env
