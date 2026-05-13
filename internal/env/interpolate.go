@@ -49,6 +49,12 @@ func expand(s string, lookup map[string]string) (string, error) {
 			sb.WriteByte('$')
 			break
 		}
+		// '$$' is an escape sequence for a literal '$'
+		if s[i] == '$' {
+			sb.WriteByte('$')
+			i++
+			continue
+		}
 		var key string
 		if s[i] == '{' {
 			// ${VAR} form
