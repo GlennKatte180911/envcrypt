@@ -19,4 +19,13 @@
 //	clean := env.StripPrefix(dbEntries, "DB_")
 //
 // All filter functions return new slices; the input slice is never modified.
+//
+// # Lookup helpers
+//
+// Get returns the value for a given key, along with a boolean indicating
+// whether the key was found. Only non-comment entries are considered:
+//
+//	if val, ok := env.Get(entries, "DATABASE_URL"); ok {
+//		fmt.Println("database URL:", val)
+//	}
 package env
